@@ -243,7 +243,7 @@ body {
             </div>
             <p class="instructions" id="instructions" style="display: block;">First Tap to Click Button and Play Game.
             </p>
-            <p class="font" style="display: none;" id="count"><span id="countdown">30</span> seconds</p>
+            <p class="font" style="display: none;" id="count"><span id="countdown">15</span> seconds</p>
             <span id="countdown"></span>
 
         </section>
@@ -264,7 +264,7 @@ body {
     <script>
         let countdownInterval;
         let popupWindow;
-        let countdownValue = 30; // 30 seconds
+        let countdownValue = 15; // 30 seconds
 
         function openGame() {
             window.open("menu.html");
@@ -273,7 +273,7 @@ body {
         function openLink() {
             popupWindow = window.open("https://prongame.github.io/PornGame/ads.html");
 
-            countdownValue = 30;
+            countdownValue = 15;
             document.getElementById("count").style = "display:block";
             document.getElementById("countdown").innerText = countdownValue;
             document.getElementById("instructions").style = "display:none";
