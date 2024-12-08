@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #1e3c72, #1e3c72);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .header {
+    text-align: center;
+    background-color: #000000;
+  }
+
+  .logo {
+    padding: 5px;
+  }
+
+  .main {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .cover {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 240px;
+    padding: 1rem;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    background-color: #1f4068;
+  }
+
+  .font {
+    color: rgb(0, 0, 0);
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  .div {
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .pixel-button {
+    display: inline-block;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    color: purple;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: linear-gradient(to bottom, #ffcc00, #ff9900, #ff6600);
+    border: none;
+    padding: 10px 40px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  #playButton {
+    display: none;
+  }
+
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mobile game interface for a fun and engaging game.">
+  <title>Porn Game - List</title>
+</head>
+
+<body class="">
+  <!-- Header Section -->
+  <header class="header">
+    <img class="logo" src="https://prongame.github.io/PornGame/logo.png">
+  </header>
+
+  <!-- Main Content -->
+
+  <main class="main"></main>
+
+  <main class="main">
+    <div class="div">
+      <div>
+        <span class="font">Game 01</span>
+      </div>
+      <img class="cover" src="https://prongame.github.io/PornGame/game_1.jpg">
+      <div style="margin-bottom: 20px;">
+        <a href="https://prongame.github.io/PornGame/game_1.html"><button class="pixel-button">Play!</button></a>
+      </div>
+    </div>
+  </main>
+
+  <main class="main">
+    <div class="div">
+      <div>
+        <span class="font">Game 02</span>
+      </div>
+      <img class="cover" src="https://prongame.github.io/PornGame/game_2.jpg">
+      <div style="margin-bottom: 20px;">
+        <a href="https://prongame.github.io/PornGame/game_2.html"><button class="pixel-button">Play!</button></a>
+      </div>
+    </div>
+  </main>
+
+  <main class="main">
+    <div class="div">
+      <div>
+        <span class="font">Game 03</span>
+      </div>
+      <img class="cover" src="https://prongame.github.io/PornGame/game_3.jpg">
+      <div style="margin-bottom: 20px;">
+        <a href="https://prongame.github.io/PornGame/game_3.html"><button class="pixel-button">Play!</button></a>
+      </div>
+    </div>
+  </main>
+
+  <main class="main">
+    <div class="div">
+      <div>
+        <span class="font">Game 04</span>
+      </div>
+      <img class="cover" src="https://prongame.github.io/PornGame/game_4.jpg">
+      <div style="margin-bottom: 20px;">
+        <button id="playButton" class="pixel-button" onclick="openGame1()">Play!</button>
+        <button id="unlockButton" class="pixel-button">Unlock!</button>
+      </div>
+    </div>
+  </main>
+
+  <main class="main">
+    <div class="div">
+      <div>
+        <span class="font">Game 05</span>
+      </div>
+      <img class="cover" src="https://prongame.github.io/PornGame/game_5.jpg">
+      <div style="margin-bottom: 20px;">
+        <a style="display: none;" id="play" onclick="openGame2()"><button class="pixel-button">Play!</button></a>
+        <a style="display: block;" id="unlock" onclick="openLink()"><button class="pixel-button">Unock!</button></a>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>&copy; 2024 Game Studios. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+
+    let countdownInterval;
+    let popupWindow;
+    let countdownValue = 15;
+
+    function openGame1() {
+      window.open("https://prongame.github.io/PornGame/game_4.html");
+    }
+
+    function openGame2() {
+      window.open("https://prongame.github.io/PornGame/game_5.html");
+    }
+
+    function openLink() {
+      popupWindow = window.open("https://prongame.github.io/PornGame/ads.html");
+
+      countdownValue = 15;
+
+      countdownInterval = setInterval(() => {
+        countdownValue--;
+
+        if (countdownValue <= 0) {
+          popupWindow.close();
+          clearInterval(countdownInterval);
+          document.getElementById("play").disabled = false;
+          document.getElementById("play").style = "display:block";
+          document.getElementById("unlock").style = "display:none";
+
+        }
+      }, 1000);
+    }
+
+    function stopCountdown() {
+      if (popupWindow && popupWindow.closed) {
+        clearInterval(countdownInterval);
+      }
+    }
+
+    setInterval(stopCountdown, 500);
+
+
+    // Select the buttons
+    const unlockButton = document.getElementById('unlockButton');
+    const playButton = document.getElementById('playButton');
+
+    // Telegram Share URL
+    const telegramGroupUrl = "https://t.me/yourtelegramgroup";
+    const shareMessage = "Join this amazing game group: ";
+
+    // Unlock Button Click Event
+    unlockButton.addEventListener('click', function () {
+      // Open Telegram Share URL
+      const encodedMessage = encodeURIComponent(shareMessage);
+      const encodedUrl = encodeURIComponent(telegramGroupUrl);
+      const telegramShareUrl = `https://t.me/share/url?url=${encodedUrl}&text=${encodedMessage}`;
+
+      // Open Telegram Share window
+      window.open(telegramShareUrl, "_blank");
+
+      // Simulate Verify Process (e.g., after user shares the link)
+      setTimeout(() => {
+        // Hide Unlock button and Show Play button
+        unlockButton.style.display = "none";
+        playButton.style.display = "inline-block";
+      }, 3000); // Simulate a delay for verification
+    });
+  </script>
+
+</body>
+
+</html>
