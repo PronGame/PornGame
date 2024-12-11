@@ -303,12 +303,12 @@
       }, 1000);
     }
 
-    function stopCountdown() {
-      if (popupWindow && popupWindow.closed) {
-        clearInterval(countdownInterval);
-        document.getElementById("countdown").innerText = "Stopped";
-      }
-    }
+    // function stopCountdown() {
+    //   if (popupWindow && popupWindow.closed) {
+    //     clearInterval(countdownInterval);
+    //     document.getElementById("countdown").innerText = "Stopped";
+    //   }
+    // }
 
     setInterval(stopCountdown, 500);
   </script>
